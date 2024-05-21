@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function populateTable(data) {
     let tableHTML = "<table  class='student-table'>";
     tableHTML +=
-      "<thead><tr><th>Name</th><th>Email</th><th>Marks</th><th>Passing</th><th>Class</th><th>Gender</th></tr></thead>";
+      "<thead><tr><th>Id</th><th>Name</th><th>Email</th><th>Marks</th><th>Passing</th><th>Class</th><th>Gender</th></tr></thead>";
     data.forEach((student) => {
       const fullName = `${student.first_name} ${student.last_name}`;
       const passingStatus = student.passing ? "Passing" : "Failed";
-      tableHTML += `<tr><td><img src="${student.img_src}" alt="${fullName}" width="50">${fullName}</td><td>${student.email}</td><td>${student.marks}</td><td>${passingStatus}</td><td>${student.class}</td><td>${student.gender}</td></tr>`;
+      tableHTML += `<tr><td>${student.id}</td><td><img src="${student.img_src}" alt="${fullName}" width="50">${fullName}</td><td>${student.email}</td><td>${student.marks}</td><td>${passingStatus}</td><td>${student.class}</td><td>${student.gender}</td></tr>`;
     });
     tableHTML += "</table>";
     mainTable.innerHTML = tableHTML;
